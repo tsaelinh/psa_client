@@ -37,3 +37,13 @@ export const deletePost = (id) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const filterEvent = (event) => async (dispatch) => {
+    try {
+        const { data } = await api.filterEvent(event);
+        // console.log("tommy:", data); to view the data being returned
+        dispatch({ type: FETCH_ALL, payload: data });
+    } catch (error) {
+        console.log(error)
+    }
+}

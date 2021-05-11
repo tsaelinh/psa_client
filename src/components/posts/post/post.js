@@ -6,7 +6,7 @@ import Moment from 'react-moment';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { useDispatch } from 'react-redux';
-import { deletePost } from '../../../actions/posts';
+import { deletePost} from '../../../actions/posts';
 
 const Post = ( {post, setCurrentId} ) => {
     const classes = useStyles();
