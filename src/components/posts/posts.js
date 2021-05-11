@@ -16,7 +16,7 @@ const Posts = ({setCurrentId}) => {
         !posts.length ? <CircularProgress /> : (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 <Autocomplete
-                    // multiple
+                    multiple
                     freeSolo
                     id="event selection"
                     style={{ width: 400 }}
