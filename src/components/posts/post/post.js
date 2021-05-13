@@ -2,6 +2,7 @@ import React from 'react';
 import useStyles from './styles';
 import { Card, CardActions, CardContent, Button, Typography, CardHeader, Avatar } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Moment from 'react-moment';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -34,6 +35,7 @@ const Post = ( {post, setCurrentId} ) => {
                                 <DeleteIcon fontSize="small" />
                                 Delete
                             </Button>
+                            <Button style={{ color: 'black' }} size="small" onClick={() => setCurrentId(post._id)}><MoreHorizIcon fontSize="default" /></Button>
                         </CardActions>
                     } />
                 </Switch>
