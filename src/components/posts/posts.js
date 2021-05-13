@@ -13,7 +13,27 @@ const Posts = ({setCurrentId}) => {
 
     console.log(posts);
     return (
-        !posts.length ? <CircularProgress /> : (
+        // !posts.length ? <CircularProgress /> : (
+        !posts.length ?
+            <div>
+                <Autocomplete
+                    multiple
+                    freeSolo
+                    id="event selection"
+                    style={{ width: 400 }}
+                    onChange={(_,value) => {dispatch(filterEvent(value))}} 
+                    options={['AMS','AWS', 'AMD', 'AWD', 'AXD', 
+                    'BMS','BWS', 'BMD', 'BWD', 'BXD', 
+                    'CMS','CWS', 'CMD', 'CWD', 'CXD', 
+                    'DMS','DWS', 'DMD', 'DWD', 'DXD', 
+                    'EMS','EWS', 'EMD', 'EWD', 'EXD']}
+                    renderInput={(params) => (
+                    <TextField {...params} label="Filter by event" margin="normal" variant="outlined" />
+                    )}
+                /> 
+                <p>No posts found</p>
+            </div>                 
+        : (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 <Autocomplete
                     multiple
